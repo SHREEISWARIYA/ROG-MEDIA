@@ -16,11 +16,11 @@ sendButton.addEventListener('click', async (e) => {
 
     }
     console.log(savedata);
-    const response = await fetch("/savedata", {
+    const response = await fetch("https://rog-media.vercel.app/savedata", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "",
+            "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Headers": "Content-Type",
             "Access-Control-Allow-Methods": "OPTIONS,POST,GET,PATCH"
         },
