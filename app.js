@@ -16,9 +16,9 @@ app.use(
   })
 );
 
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*")
-})
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "*")
+// })
 
 app.post('/savedata', async (req, res) => {
   console.log(req.body);

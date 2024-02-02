@@ -17,7 +17,6 @@ sendButton.addEventListener('click', async (e) => {
     }
     console.log(savedata);
     const response = await fetch("/savedata", {
-        // mode: 'no-cors',
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -30,10 +29,12 @@ sendButton.addEventListener('click', async (e) => {
         .then(async (doc) => {
 
             alert('Data Saved');
+            console.log(doc)
             document.getElementById('myForm').reset()
         })
         .catch((err) => {
             document.getElementById('myForm').reset()
             alert("Data not saved");
+            console.log(err)
         });
 })
