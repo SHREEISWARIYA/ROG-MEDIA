@@ -20,7 +20,7 @@ app.use(
 //   res.header("Access-Control-Allow-Origin", "*")
 // })
 
-app.post('https://rog-media.vercel.app/savedata', async (req, res) => {
+app.post('/savedata', async (req, res) => {
   console.log(req.body);
   try {
     await customerModel.create(req.body)
@@ -31,7 +31,9 @@ app.post('https://rog-media.vercel.app/savedata', async (req, res) => {
     })
   }
   catch (err) {
-    res.status(404).send('failed to save')
+    res.status(404).json({
+      status: 'fail'
+    })
   }
 })
 
