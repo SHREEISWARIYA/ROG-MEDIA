@@ -6,13 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ROG-Media</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/script.js"></script>
 </head>
 
 <body style="background-color: #121313;">
   <div class="banner" id="home">
     <div class="navbar">
-      <img src="logo1.png" onclick="location.href='#contact'" alt="logo" class="logo">
+      <img src="assets/logo1.png" onclick="location.href='#contact'" alt="logo" class="logo">
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#service">Service</a></li>
@@ -117,11 +118,11 @@
       <button class="find" onclick="location.href='#contact'">GET STARTED</button>
     </div>
     <div>
-      <img src="kendal.jpg" alt="rog" class="i1">
+      <img src="assets/kendal.jpg" alt="rog" class="i1">
 
     </div>
     <div>
-      <img src="instagram-advertising.jpg" alt="vi" class="i2">
+      <img src="assets/instagram-advertising.jpg" alt="vi" class="i2">
     </div>
   </div>
 
@@ -141,11 +142,11 @@
       <button class="find" onclick="location.href='#contact'">GET STARTED</button>
     </div>
     <div>
-      <img src="facebook.jpg" alt="rog" class="j1">
+      <img src="assets/facebook.jpg" alt="rog" class="j1">
 
     </div>
     <div>
-      <img src="mark.webp" alt="vi" class="j2">
+      <img src="assets/mark.webp" alt="vi" class="j2">
     </div>
   </div>
   <div class="wrapper" id="seo">
@@ -170,11 +171,11 @@
       <button class="find" onclick="location.href='#contact'">GET STARTED</button>
     </div>
     <div>
-      <img src="seo.jpg" alt="rog" class="j1">
+      <img src="assets/seo.jpg" alt="rog" class="j1">
 
     </div>
     <div>
-      <img src="seo full.jpg" alt="vi" class="j3">
+      <img src="assets/seo full.jpg" alt="vi" class="j3">
     </div>
   </div>
 
@@ -316,7 +317,7 @@
       </ul>
 
 
-      <form action="" method="post" class="contact-form">
+      <form action="" method="post" id="myForm" class="contact-form">
 
 
         <div class="input-wrapper">
@@ -364,44 +365,6 @@
     </div>
   </footer>
 
-
-
-
-  <script>
-    const nameSelector = document.getElementById('name');
-    const emailSelector = document.getElementById('email');
-    const subjectSelector = document.getElementById('subject');
-    const phoneSelector = document.getElementById('phone');
-    const messageSelector = document.getElementById('message');
-    const sendButton = document.getElementById('sendMessage')
-    sendButton.addEventListener('click', async (e) => {
-      e.preventDefault();
-      console.log('done');
-      const savedata = {
-        name: nameSelector.value,
-        email_address: emailSelector.value,
-        subject: subjectSelector.value,
-        phone: phoneSelector.value,
-        message: messageSelector.value,
-
-      }
-      console.log(savedata);
-      const response = await fetch("/savedata", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(savedata),
-      })
-        .then(async (doc) => {
-
-          alert('Data Saved');
-        })
-        .catch((err) => {
-          alert("Data not saved");
-        });
-    })
-
-
-  </script>
 
 </body>
 
