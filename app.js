@@ -25,11 +25,14 @@ app.post('/savedata', async (req, res) => {
   try {
     await customerModel.create(req.body)
     mailer(req.body.email_address, req.body.message, req.body.subject)
+    res.status(201).json({
+      status: 'success',
+      message: 'Data saved'
+    })
   }
   catch (err) {
     res.status(404).send('failed to save')
   }
-  res.send('successfully saved')
 })
 
 module.exports = app;
