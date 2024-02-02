@@ -17,8 +17,14 @@ sendButton.addEventListener('click', async (e) => {
     }
     console.log(savedata);
     const response = await fetch("/savedata", {
+        // mode: 'no-cors',
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "Content-Type",
+            "Access-Control-Allow-Methods": "OPTIONS,POST,GET,PATCH"
+        },
         body: JSON.stringify(savedata),
     })
         .then(async (doc) => {
