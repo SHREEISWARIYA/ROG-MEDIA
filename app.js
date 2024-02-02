@@ -21,14 +21,14 @@ app.use((req, res, next) => {
   next()
 })
 
-app.get('https://rog-media.vercel.app/welcome', (req, res) => {
+app.get('/welcome', (req, res) => {
   res.status(200).json({
     status: 'success',
     message: 'welcome broo!'
   })
 })
 
-app.post('https://rog-media.vercel.app/savedata', async (req, res) => {
+app.post('/savedata', async (req, res) => {
   console.log(req.body);
   try {
     await customerModel.create(req.body)
@@ -44,5 +44,6 @@ app.post('https://rog-media.vercel.app/savedata', async (req, res) => {
     })
   }
 })
+
 
 module.exports = app;
