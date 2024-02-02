@@ -20,7 +20,7 @@ sendButton.addEventListener('click', async (e) => {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Origin": "https://rog-media.vercel.app/",
             "Access-Control-Allow-Headers": "Content-Type",
             "Access-Control-Allow-Methods": "OPTIONS,POST,GET,PATCH"
         },

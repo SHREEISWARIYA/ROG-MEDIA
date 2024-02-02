@@ -20,7 +20,7 @@ app.use(
 //   res.header("Access-Control-Allow-Origin", "*")
 // })
 
-app.post('/savedata', async (req, res) => {
+app.post('https://rog-media.vercel.app/savedata', async (req, res) => {
   console.log(req.body);
   try {
     await customerModel.create(req.body)
