@@ -16,9 +16,10 @@ app.use(
   })
 );
 
-// app.use((req, res, next) => {
-//   res.header("Access-Control-Allow-Origin", "*")
-// })
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*")
+  next()
+})
 
 app.get('/welcome', (req, res) => {
   res.status(200).json({
