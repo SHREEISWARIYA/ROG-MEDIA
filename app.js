@@ -20,6 +20,13 @@ app.use(
 //   res.header("Access-Control-Allow-Origin", "*")
 // })
 
+app.get('/welcome', (req, res) => {
+  res.status(200).json({
+    status: 'success',
+    message: 'welcome broo!'
+  })
+})
+
 app.post('/savedata', async (req, res) => {
   console.log(req.body);
   try {
