@@ -13,11 +13,11 @@
     "routes": [
         {
             "src": "/savedata",
-            "dest": "app.js"
+            "dest": "server.js"
         },
         {
             "src": "/welcome",
-            "dest": "app.js"
+            "dest": "server.js"
         },
         {
             "src": "/",
