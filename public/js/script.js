@@ -16,20 +16,17 @@ sendButton.addEventListener('click', async (e) => {
 
     }
     console.log(savedata);
-    const response = await fetch("/savedata", {
+    const response = await fetch("http://localhost:8080/savedata", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Headers": "Content-Type",
-            "Access-Control-Allow-Methods": "OPTIONS,POST,GET,PATCH"
         },
         body: JSON.stringify(savedata),
     })
         .then(async (doc) => {
 
             alert('Data Saved');
-            console.log(doc)
+            console.log(doc.json())
             document.getElementById('myForm').reset()
         })
         .catch((err) => {
